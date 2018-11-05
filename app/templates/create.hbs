@@ -1,0 +1,20 @@
+<form onsubmit ={{action 'compose' }}>
+  <div>
+    <label for="from"> from </label>
+    {{input type = "text" id="from" value=from}}
+  </div>
+  <div>
+    <label for="to"> to </label>
+    {{input type="text" id = "to" value= to}}
+  </div>
+  <div>
+    <label for="subject" > subject </label>
+    {{input type="text" id = "subject" value = subject}}
+  </div>
+  <div>
+    <label for="message" > subject </label>
+    {{textarea rows="8" cols="80" value = message}}
+  </div>
+
+  <button type="submit"> publish </button>
+</form>

@@ -1,0 +1,64 @@
+<table class="table">
+  <thead>
+	<strong >Starred </strong>
+  </thead>
+  <tbody>
+  {{#each model as |email|}}
+    {{#if email.starred}}
+    <tr>
+      <th scope="row">
+      {{#link-to "email" email.id}}
+      <div> ID: {{email.id}}</div>
+
+      <div>From: {{email.from}}</div>
+      <div>To: {{email.to}} </div>
+      <div>Subject: {{email.subject}}</div>
+
+      <div>Message: {{truncate-text email.message 70}}</div>
+      {{/link-to}}
+      </th>
+      <th>
+        <StarButton @starred={{email.starred}} @onClick={{action "star" email}} />
+      </th>
+
+  </tr>
+    {{/if}}
+  {{/each}}
+</tbody>
+</table>
+
+
+
+<table class="table">
+  <thead>
+	<strong >Not Starred </strong>
+  </thead>
+  <tbody>
+  {{#each model as |email|}}
+    {{#unless email.starred}}
+    <tr>
+      <th scope="row">
+      {{#link-to "email" email.id}}
+      <div> ID: {{email.id}}</div>
+
+      <div>From: {{email.from}}</div>
+      <div>To: {{email.to}} </div>
+      <div>Subject: {{email.subject}}</div>
+
+      <div>Message: {{truncate-text email.message 70}}</div>
+      {{/link-to}}
+      </th>
+      <th>
+        <StarButton @starred={{email.starred}} @onClick={{action "star" email}} />
+      </th>
+
+
+
+  </tr>
+    {{/unless}}
+  {{/each}}
+</tbody>
+</table>
+
+
+{{outlet}}
