@@ -33,11 +33,11 @@ test('the star is empty when starred is false', async function(assert) {
   });
 
   test('the star is filled when starred is true', async function(assert) {
-    await render(hbs`<StarButton
+    await render(hbs`<StarButton data-test = "starred"
 @starred={{true}}
 @onClick={{star}}
 />`);
-    assert.dom('starred').exists({ count: 1 });
+    assert.dom('[data-test="starred"]').exists({ count: 1 });
   });
 
 
