@@ -13,8 +13,8 @@
   </div>
   <div>
     <label for="message" > subject </label>
-    {{textarea rows="8" cols="80" value = message}}
+    {{textarea rows="8" cols="80" id = "message" value = message}}
   </div>
 
-  <button type="submit"> publish </button>
+  <button data-test="send" type="submit"> publish </button>
 </form>

@@ -1,9 +1,7 @@
 import { Factory } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  id(){
-    return faker.random.number();
-  },
+
   from(){
     return faker.internet.email();
   },

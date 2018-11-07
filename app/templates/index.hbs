@@ -6,9 +6,9 @@
   {{#each model as |email|}}
     {{#if email.starred}}
     <tr>
-      <th scope="row">
+      <th data-test="email" scope="row">
       {{#link-to "email" email.id}}
-      <div> ID: {{email.id}}</div>
+      <div data-test="starred"> ID: {{email.id}}</div>
 
       <div>From: {{email.from}}</div>
       <div>To: {{email.to}} </div>
@@ -37,9 +37,9 @@
   {{#each model as |email|}}
     {{#unless email.starred}}
     <tr>
-      <th scope="row">
+      <th data-test="email" scope="row">
       {{#link-to "email" email.id}}
-      <div> ID: {{email.id}}</div>
+      <div data-test="not-starred"> ID: {{email.id}}</div>
 
       <div>From: {{email.from}}</div>
       <div>To: {{email.to}} </div>

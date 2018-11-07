@@ -1,12 +1,13 @@
 
-<button type="button" onclick={{action 'deletePost' model}}>
+<button data-test="delete" id ="delete" type="button" onclick={{action 'deletePost' model}}>
   Delete this email
 </button>
 
 <p> ID: {{model.id}} </p>
-<p> from: {{model.from}}     to: {{model.to}}</p>
-<p> subject: {{model.subject}} </p>
-<p> message: {{model.message}} </p>
+<p data-test="from"> from: {{model.from}}</p>
+<p data-test="to"> to: {{model.to}}</p>
+<p data-test="subject"> subject: {{model.subject}} </p>
+<p data-test="message"> message: {{model.message}} </p>
 
 
 
